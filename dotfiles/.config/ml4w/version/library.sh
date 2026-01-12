@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 vercomp() {
     if [[ $1 == $2 ]]; then
         return 0

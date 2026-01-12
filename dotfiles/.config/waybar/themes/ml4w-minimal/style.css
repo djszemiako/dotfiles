@@ -6,8 +6,14 @@
  *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
  *                 |___/                              |___/
  *
+ * by Stephan Raabe (2023)
  * -----------------------------------------------------
 */
+
+/* -----------------------------------------------------
+ * Import Pywal colors
+ * ----------------------------------------------------- */
+/* @import 'style-light.css'; */
 @define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;
 @define-color workspacesbackground1 #FFFFFF;
@@ -23,7 +29,7 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, "Material Icons", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 0px;
 }
@@ -143,7 +149,6 @@ window#waybar.empty #window {
 #custom-quicklink_email,
 #custom-quicklink_thunderbird,
 #custom-quicklink_calculator,
-#custom-sidepad,
 #custom-quicklink1,
 #custom-quicklink2,
 #custom-quicklink3,
@@ -225,7 +230,7 @@ window#waybar.empty #window {
 
 
 /* -----------------------------------------------------
- * Idle Inhibitor
+ * Idle Inhibator
  * ----------------------------------------------------- */
 
  #idle_inhibitor {
@@ -260,7 +265,6 @@ window#waybar.empty #window {
     margin: 0px 13px 0px 0px;
     padding:0px;
     font-size:20px;
-    font-family: "Material Icons";
     color: @iconcolor;
     opacity: 0.8;
 }

@@ -1,24 +1,21 @@
-#!/usr/bin/env bash
 #    ___           __
 #   / _ \___  ____/ /__
 #  / // / _ \/ __/  '_/
 # /____/\___/\__/_/\_\
 #
 
-DOCK_THEME="modern"
-if [ -f $HOME/.config/ml4w/settings/dock-theme ]; then
-    DOCK_THEME=$(cat $HOME/.config/ml4w/settings/dock-theme)
-fi
-echo ":: Using Dock Theme $DOCK_THEME"
-echo ":: Dock Autohide $DOCK_AUTOHIDE"
+
+config="$HOME/.config/gtk-3.0/settings.ini"
 if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
     killall nwg-dock-hyprland
     sleep 0.5
-    if [ -f $HOME/.config/ml4w/settings/dock-autohide ]; then
-        nwg-dock-hyprland -d -i 32 -w 5 -mb 10 -x -s themes/$DOCK_THEME/style.css -c "$HOME/.config/hypr/scripts/launcher.sh"
+    prefer_dark_theme="$(grep 'gtk-application-prefer-dark-theme' "$config" | sed 's/.*\s*=\s*//')"
+    if [ $prefer_dark_theme == 0 ]; then
+        style="style-light.css"
     else
-        nwg-dock-hyprland -i 32 -w 5 -mb 10 -x -s themes/$DOCK_THEME/style.css -c "$HOME/.config/hypr/scripts/launcher.sh"
+        style="style-dark.css"
     fi
+    nwg-dock-hyprland -i 32 -w 5 -mb 10 -ml 10 -mr 10 -x -s $style -c  "rofi -show drun"
 else
     echo ":: Dock disabled"
 fi

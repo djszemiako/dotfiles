@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 figlet -f smslant "Figlet"
 echo
 # ------------------------------------------------

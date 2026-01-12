@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 cache_file="$HOME/.cache/toggle_animation"
 if [[ $(cat $HOME/.config/hypr/conf/animation.conf) == *"disabled"* ]]; then
     echo ":: Toggle blocked by disabled.conf variation."

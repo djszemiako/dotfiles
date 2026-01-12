@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+# Compare installed version with running dotfiles
+if [ -f ~/.config/ml4w/version/compare.sh ]; then
+    $HOME/.config/ml4w/version/compare.sh
+fi
 
 # Start ML4W Welcome App
 if [ ! -f $HOME/.cache/ml4w-welcome-autostart ]; then
